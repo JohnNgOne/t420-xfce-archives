@@ -1,0 +1,75 @@
+conky.config = {
+-- Settings
+
+	background = true,
+	use_xft = true,
+	font = 'Sans-serif:size=11',
+--font =  Liberation Sans:size=11',
+	xftalpha = 1,
+	update_interval = 1.0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = false,
+	own_window_colour = '000000',
+	own_window_type = 'desktop',
+	own_window_argb_visual = true,
+	own_window_argb_value = 135,
+	draw_blended = true,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_class = 'Conky',
+	own_window_title = 'Crunchbang Waldorf Conky',
+	double_buffer = true,
+	minimum_width = 240, minimum_height = 200,
+	maximum_width = 280,
+	draw_shades = false,
+	default_shade_color = '000000',
+	draw_borders = false,
+	draw_graph_borders = false,
+	default_color = 'cccccc',
+	draw_outline = false,
+	default_outline_color = '828282',
+	alignment = 'top_right',
+	gap_x = 20,
+	gap_y = 20,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	override_utf8_locale = true,
+
+};
+
+conky.text = [[
+S Y S T E M    I N F O
+${hr}
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+RAM:$alignr$mem/$memmax
+Swap usage:$alignr$swap/$swapmax
+Disk usage:$alignr${fs_used /}/${fs_size /}
+CPU usage:$alignr${cpu cpu0}%
+Voltage:$alignr${exec sensors | grep 'in0' | awk '{print $2}'} V
+Amperage:$alignr${exec sensors | grep 'curr1' | awk '{print $2}'} A
+CPU temperature:$alignr${exec sensors | grep 'Package id' | awk '{print $4}'}
+Fan:$alignr${exec sensors | grep 'fan1' | awk '{print $2}'} RPM
+Core 1:$alignr${freq_g 1} GHz
+Core 2:$alignr${freq_g 2} GHz
+Core 3:$alignr${freq_g 3} GHz
+Core 4:$alignr${freq_g 4} GHz
+Core 5:$alignr${freq_g 5} GHz
+Core 6:$alignr${freq_g 6} GHz
+Core 7:$alignr${freq_g 7} GHz
+Core 8:$alignr${freq_g 8} GHz
+
+
+S H O R T C U T    K E Y S
+${hr}
+Super+Space$alignr Main Menu
+Ctrl+t$alignr Terminal
+Super+f$alignr File Manager
+Super+e$alignr Text Editor
+Super+w$alignr Web Browser
+Super+h$alignr Task Manager
+Super+l$alignr Lock Screen
+Shift+Alt+2$alignr Switch workspace
+Shift+Alt+F2$alignr Move window
+]];
